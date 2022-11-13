@@ -9,12 +9,12 @@ app = Flask(__name__)
 def home():
     print(socket.gethostname())
     print(psutil.cpu_percent())
-    print(psutil.virtual_memory())
+    print(psutil.virtual_memory().percent)
 
     payload = {
         "hostname" : socket.gethostname(),
         "cpu" : psutil.cpu_percent(),
-        "mem" : psutil.virtual_memory()
+        "mem" : psutil.virtual_memory().percent
     }
     return render_template('index.html', results=payload)
 
