@@ -1,5 +1,6 @@
 FROM python:3.10-slim-bullseye 
 ADD app.py /
+ADD .env /
 ADD templates/ /templates
 ADD static/ /static
 COPY requirements.txt requirements.txt

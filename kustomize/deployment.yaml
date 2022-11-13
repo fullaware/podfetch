@@ -13,9 +13,18 @@ spec:
     spec:
       containers:
       - name: podfetch
-        image: fullaware/podfetch
-        imagePullPolicy: IfNotPresent
+        image: fullaware/podfetch:latest
+        env:
+        - name: MSG
+          value: "Hello World!!"
         ports:
         - name: http
-          containerPort: 5000
+          containerPort: 8080 
           protocol: TCP
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
