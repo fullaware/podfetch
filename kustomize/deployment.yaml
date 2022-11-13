@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podfetch
+spec:
+  selector:
+    matchLabels:
+      app: podfetch
+  template:
+    metadata:
+      labels:
+        app: podfetch
+    spec:
+      containers:
+      - name: podfetch
+        image: fullaware/podfetch
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 5000
+          protocol: TCP

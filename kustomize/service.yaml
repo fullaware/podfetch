@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: podfetch
+spec:
+  type: ClusterIP
+  selector:
+    app: podfetch
+  ports:
+    - name: http
+      port: 5000
+      protocol: TCP
+      targetPort: http
