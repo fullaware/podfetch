@@ -1,4 +1,4 @@
 # podfetch
-Attempt to extract as much information anonymously from a k8s pod
+Python Flask app that reports hostname, cpu and mem intended for container deployment
 
 ![screenshot](https://github.com/fullaware/podfetch/blob/main/screenshot.png)
